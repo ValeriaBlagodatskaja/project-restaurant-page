@@ -1,3 +1,3 @@
-import createElements from "./pageLoad.js";
+import pageLoad from "./pageLoad";
 
-createElements();
+pageLoad();
