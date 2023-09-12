@@ -1,11 +1,6 @@
-const createContactPage = () => {
-  const content = document.querySelector("#content");
-  const pageContent = document.createElement("div");
-  pageContent.classList.add("page-content");
-
-  const div = document.createElement("div");
-  div.setAttribute("id", "map");
-  pageContent.appendChild(div);
+const createMap = () => {
+  const mapDiv = document.createElement("div");
+  mapDiv.setAttribute("id", "map");
 
   const iframe = document.createElement("iframe");
   iframe.src =
@@ -16,14 +11,87 @@ const createContactPage = () => {
   iframe.allowfullscreen = "";
   iframe.loading = "lazy";
   iframe.referrerpolicy = "no-referrer-when-downgrade";
-  pageContent.appendChild(iframe);
+  mapDiv.appendChild(iframe);
 
-  const form = document.createElement("form");
-  form.classList.add("contact-form");
+  return mapDiv;
+};
+
+const createContactPage = () => {
+  const content = document.querySelector("#content");
+  const pageContent = document.createElement("div");
+  pageContent.classList.add("page-content");
+
+  const contactContainer = document.createElement("div");
+  contactContainer.classList.add("contact-container");
+
+  const mapContainer = document.createElement("div");
+  mapContainer.classList.add("map-container");
+
+  const infoContainer = document.createElement("div");
+  infoContainer.classList.add("info-container");
+
+  const locationDiv = document.createElement("div");
+  locationDiv.classList.add("location");
+
+  const locationSymbol = document.createElement("img");
+  locationSymbol.src = "../images/icons8-location-50.png";
+  locationSymbol.alt = "Location Icon";
+  locationSymbol.height = "20";
+  locationDiv.appendChild(locationSymbol);
+
+  const address = document.createElement("p");
+  address.textContent = "Vene 2, Tallinn 10123";
+  locationDiv.appendChild(address);
+
+  infoContainer.appendChild(locationDiv);
+
+  const hoursDiv = document.createElement("div");
+  hoursDiv.classList.add("hours");
+
+  const clockSymbol = document.createElement("img");
+  clockSymbol.src = "../images/icons8-clock-50.png";
+  clockSymbol.alt = "Clock Icon";
+  clockSymbol.height = "20";
+  hoursDiv.appendChild(clockSymbol);
+
+  const workingHours = document.createElement("p");
+  workingHours.textContent = "Mon-Sun: 12pm-11pm";
+  hoursDiv.appendChild(workingHours);
+
+  infoContainer.appendChild(hoursDiv);
+
+  const phoneDiv = document.createElement("div");
+  phoneDiv.classList.add("phoneDiv");
+
+  const phoneSymbol = document.createElement("img");
+  phoneSymbol.src = "../images/icons8-phone-50.png";
+  phoneSymbol.alt = "Phone Icon";
+  phoneSymbol.height = "20";
+  phoneDiv.appendChild(phoneSymbol);
+
+  const phoneNumber = document.createElement("p");
+  phoneNumber.textContent = "+372 56960022";
+  phoneDiv.appendChild(phoneNumber);
+
+  infoContainer.appendChild(phoneDiv);
+
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("messageDiv");
+
+  const messageSymbol = document.createElement("img");
+  messageSymbol.src = "../images/icons8-message-50.png";
+  messageSymbol.alt = "Message Icon";
+  messageSymbol.height = "20";
+  messageDiv.appendChild(messageSymbol);
 
   const h3 = document.createElement("h3");
   h3.textContent = "Message us";
-  form.appendChild(h3);
+  messageDiv.appendChild(h3);
+
+  infoContainer.appendChild(messageDiv);
+
+  const form = document.createElement("form");
+  form.classList.add("contact-form");
 
   const nameInput = document.createElement("input");
   nameInput.type = "text";
@@ -40,7 +108,20 @@ const createContactPage = () => {
   messageInput.placeholder = "Type your message...";
   form.appendChild(messageInput);
 
-  pageContent.appendChild(form);
+  const submitButton = document.createElement("input");
+  submitButton.type = "submit";
+  submitButton.value = "Submit";
+  submitButton.classList.add("submitButton");
+  form.appendChild(submitButton);
+
+  infoContainer.appendChild(form);
+
+  mapContainer.appendChild(createMap());
+
+  contactContainer.appendChild(infoContainer);
+  contactContainer.appendChild(mapContainer);
+  pageContent.appendChild(contactContainer);
+
   content.appendChild(pageContent);
 };
 export default createContactPage;

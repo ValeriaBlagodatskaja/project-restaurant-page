@@ -15,9 +15,9 @@ function createHomePage() {
   const p = document.createElement("p");
   p.textContent = "Authentic Italian cuisine and cozy ambience";
   const image = document.createElement("img");
-  image.src = "./images/resto-inside.jpg";
+  image.src = "../images/resto-inside.jpg";
   image.alt = "Interiror";
-  image.height = "300";
+  image.height = "700";
 
   const footer = document.createElement("footer");
   footer.classList.add("footer");

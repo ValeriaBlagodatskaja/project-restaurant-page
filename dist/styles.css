@@ -1,0 +1,55 @@
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phoneDiv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.messageDiv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+input {
+  width: 20%;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  width: 10%;
+  cursor: pointer;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-container {
+  flex: 1;
+}
+
+.map-container {
+  flex-basis: 800px;
+}
