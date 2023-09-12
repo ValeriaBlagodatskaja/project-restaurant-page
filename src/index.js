@@ -1,1 +1,3 @@
-console.log("Hello, Webpack!");
+import createElements from "./pageLoad.js";
+
+createElements();
