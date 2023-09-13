@@ -1,9 +1,13 @@
 import createHomePage from "./restaurant";
 import createMenuPage from "./menu";
 import createContactPage from "./contact";
+import { addPrimaveraHeader } from "./restaurant.js";
 
 const createTabs = () => {
   const content = document.querySelector("#content");
+
+  const tabsContainer = document.createElement("div");
+  tabsContainer.classList.add("tabsContainer");
 
   const button1 = document.createElement("button");
   const button2 = document.createElement("button");
@@ -21,9 +25,13 @@ const createTabs = () => {
   button2.textContent = "Menu";
   button3.textContent = "Contact";
 
-  content.appendChild(button1);
-  content.appendChild(button2);
-  content.appendChild(button3);
+  content.appendChild(addPrimaveraHeader());
+
+  tabsContainer.appendChild(button1);
+  tabsContainer.appendChild(button2);
+  tabsContainer.appendChild(button3);
+
+  content.appendChild(tabsContainer);
 
   button1.addEventListener("click", () => {
     clearContent();

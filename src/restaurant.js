@@ -1,12 +1,16 @@
-function createHomePage() {
-  const content = document.querySelector("#content");
-  const pageContent = document.createElement("div");
-  pageContent.classList.add("page-content");
-
+function addPrimaveraHeader() {
   const header = document.createElement("header");
   header.classList.add("header");
   const h2 = document.createElement("h2");
   h2.textContent = "Primavera";
+  header.appendChild(h2);
+  return header;
+}
+
+function createHomePage() {
+  const content = document.querySelector("#content");
+  const pageContent = document.createElement("div");
+  pageContent.classList.add("page-content");
 
   const main = document.createElement("main");
   main.classList.add("main");
@@ -26,11 +30,9 @@ function createHomePage() {
   const githubLink = document.createElement("a");
   githubLink.href = "https://github.com/ValeriaBlagodatskaja";
 
-  header.appendChild(h2);
   main.appendChild(h1);
   main.appendChild(p);
   main.appendChild(image);
-  pageContent.appendChild(header);
   pageContent.appendChild(main);
   pageContent.appendChild(footer);
   footer.appendChild(copyright);
@@ -39,3 +41,4 @@ function createHomePage() {
 }
 
 export default createHomePage;
+export { addPrimaveraHeader };

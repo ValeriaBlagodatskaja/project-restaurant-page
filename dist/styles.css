@@ -93,3 +93,25 @@ li {
   text-align: center;
   font-size: 40px;
 }
+
+.tabsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Add some padding to the buttons */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  margin-right: 10px;
+}
+
+.tab:hover {
+  background-color: #45a049; /* Darker green background color */
+}
+
+.tab.active {
+  background-color: #008cba; /* Blue background color for the active tab */
+}
