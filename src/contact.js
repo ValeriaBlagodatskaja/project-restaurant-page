@@ -123,5 +123,7 @@ const createContactPage = () => {
   pageContent.appendChild(contactContainer);
 
   content.appendChild(pageContent);
+  const footer = document.querySelector(".footer");
+  content.appendChild(footer);
 };
 export default createContactPage;

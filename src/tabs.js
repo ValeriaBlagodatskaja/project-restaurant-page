@@ -1,50 +1,44 @@
 import createHomePage from "./restaurant";
 import createMenuPage from "./menu";
 import createContactPage from "./contact";
-import { addPrimaveraHeader } from "./restaurant.js";
 
 const createTabs = () => {
   const content = document.querySelector("#content");
 
-  const tabsContainer = document.createElement("div");
-  tabsContainer.classList.add("tabsContainer");
+  const header = document.createElement("header");
+  header.classList.add("header");
 
-  const button1 = document.createElement("button");
-  const button2 = document.createElement("button");
-  const button3 = document.createElement("button");
+  const h2 = document.createElement("h2");
+  h2.textContent = "Primavera";
 
-  button1.setAttribute("id", "home-button");
-  button2.setAttribute("id", "menu-button");
-  button3.setAttribute("id", "contact-button");
+  header.appendChild(h2);
 
-  button1.classList.add("tab");
-  button2.classList.add("tab");
-  button3.classList.add("tab");
+  const nav = document.createElement("nav");
+  nav.id = "tabs";
 
-  button1.textContent = "Home";
-  button2.textContent = "Menu";
-  button3.textContent = "Contact";
+  const tabNames = ["Home", "Menu", "Contact"];
 
-  content.appendChild(addPrimaveraHeader());
+  tabNames.forEach((tabName) => {
+    const button = document.createElement("button");
+    button.classList.add("tab");
+    button.textContent = tabName;
 
-  tabsContainer.appendChild(button1);
-  tabsContainer.appendChild(button2);
-  tabsContainer.appendChild(button3);
+    button.addEventListener("click", () => {
+      clearContent();
+      if (tabName === "Home") {
+        createHomePage();
+      } else if (tabName === "Menu") {
+        createMenuPage();
+      } else if (tabName === "Contact") {
+        createContactPage();
+      }
+    });
 
-  content.appendChild(tabsContainer);
-
-  button1.addEventListener("click", () => {
-    clearContent();
-    createHomePage();
+    nav.appendChild(button);
   });
-  button2.addEventListener("click", () => {
-    clearContent();
-    createMenuPage();
-  });
-  button3.addEventListener("click", () => {
-    clearContent();
-    createContactPage();
-  });
+
+  content.appendChild(header);
+  header.appendChild(nav);
 };
 
 function clearContent() {

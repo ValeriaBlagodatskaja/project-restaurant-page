@@ -84,6 +84,8 @@ const createMenuPage = () => {
   pageContent.appendChild(menuList);
 
   content.appendChild(pageContent);
+  const footer = document.querySelector(".footer");
+  content.appendChild(footer);
 };
 
 export default createMenuPage;
