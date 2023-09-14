@@ -103,9 +103,10 @@ const createContactPage = () => {
   emailInput.placeholder = "Email";
   form.appendChild(emailInput);
 
-  const messageInput = document.createElement("input");
-  messageInput.type = "text";
+  const messageInput = document.createElement("textarea");
   messageInput.placeholder = "Type your message...";
+  messageInput.rows = 5;
+  messageInput.classList.add("typeMessage");
   form.appendChild(messageInput);
 
   const submitButton = document.createElement("input");

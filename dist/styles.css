@@ -3,14 +3,17 @@
   margin: 0;
   padding: 0;
 }
-
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Thin.woff") format("woff");
+}
 body {
   background-image: url("../images/resto-inside.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
   overflow: auto;
+  font-family: "Poppins", sans-serif;
 }
 
 #content {
@@ -53,11 +56,37 @@ body {
 input {
   width: 100%;
   cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  outline: "none";
+  background-color: transparent;
+  color: white;
 }
 
 input[type="submit"] {
   width: 50%;
   cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.typeMessage {
+  height: 100px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  outline: "none";
+  background-color: transparent;
+  color: white;
 }
 
 .contact-container {
@@ -68,6 +97,7 @@ input[type="submit"] {
 
 h3 {
   font-size: 24px;
+  font-weight: 500;
 }
 
 .info-container {
@@ -87,10 +117,13 @@ h3 {
   justify-content: center;
 }
 
+iframe {
+  border-radius: 10px;
+}
+
 li {
   list-style: none;
   font-size: 24px;
-  font-weight: bold;
 }
 
 .menuList {
@@ -101,21 +134,35 @@ li {
   margin: 0 auto;
   max-width: 1000px;
   color: white;
-}
-
-.itemDiv {
-  width: 100%;
-  box-sizing: border-box;
+  margin-bottom: 4rem;
 }
 
 .ourMenu {
   text-align: center;
   font-size: 40px;
   color: white;
+  padding: 2rem;
+  font-family: cursive;
 }
+
+.itemDiv {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+}
+
+img {
+  border-radius: 10px;
+}
+
 h2 {
   margin-bottom: 20px;
-  font-size: 48px;
+  font-size: 56px;
+  font-family: "Montserrat", cursive;
+  letter-spacing: 2px;
 }
 
 #tabs {
@@ -124,19 +171,22 @@ h2 {
 }
 
 .tab {
-  background-color: #4caf50;
+  background-color: transparent;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-}
-
-.tab:hover {
-  background-color: #45a049;
+  border-bottom: 2px solid transparent;
+  font-size: 18px;
 }
 
 .tab.active {
-  background-color: #008cba;
+  border-bottom-color: white;
+  cursor: pointer;
+}
+
+.tab:hover {
+  transform: translateY(-0.25em);
 }
 
 header {

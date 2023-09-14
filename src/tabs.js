@@ -23,6 +23,10 @@ const createTabs = () => {
     button.classList.add("tab");
     button.textContent = tabName;
 
+    if (tabName === "Home") {
+      button.classList.add("active");
+    }
+
     button.addEventListener("click", () => {
       clearContent();
       if (tabName === "Home") {
@@ -32,6 +36,12 @@ const createTabs = () => {
       } else if (tabName === "Contact") {
         createContactPage();
       }
+
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      button.classList.add("active");
     });
 
     nav.appendChild(button);
