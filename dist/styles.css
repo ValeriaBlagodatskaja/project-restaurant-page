@@ -69,13 +69,13 @@ input[type="submit"] {
   cursor: pointer;
   color: white;
   padding: 10px 20px;
-  background-color: #4caf50;
-  border: none;
+  background-color: transparent;
+  border: 1px solid green;
   border-radius: 5px;
   font-size: 18px;
 }
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: black;
 }
 .typeMessage {
   height: 100px;
@@ -87,6 +87,7 @@ input[type="submit"]:hover {
   outline: "none";
   background-color: transparent;
   color: white;
+  font-family: sans-serif;
 }
 
 .contact-container {
@@ -110,6 +111,10 @@ h3 {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
+}
+
+.messageSymbol {
+  border-radius: 0%;
 }
 
 .map-container {
@@ -146,6 +151,9 @@ li {
 }
 
 .itemDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
@@ -206,6 +214,10 @@ main {
   align-items: center;
   padding: 20px;
   color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  gap: 20px;
 }
 
 .footer {
@@ -214,4 +226,8 @@ main {
   text-align: center;
   padding: 20px 0;
   width: 100%;
+}
+
+.handsImage {
+  border-radius: 50%;
 }

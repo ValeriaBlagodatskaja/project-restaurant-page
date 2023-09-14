@@ -79,6 +79,7 @@ const createContactPage = () => {
   messageDiv.classList.add("messageDiv");
 
   const messageSymbol = document.createElement("img");
+  messageSymbol.classList.add("messageSymbol");
   messageSymbol.src = "../images/icons8-message-50.png";
   messageSymbol.alt = "Message Icon";
   messageSymbol.height = "20";
