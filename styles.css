@@ -11,6 +11,7 @@ body {
   background-image: url("../images/resto-inside.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center center;
   overflow: auto;
   font-family: "Poppins", sans-serif;
@@ -221,6 +222,9 @@ main {
 }
 
 .footer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
@@ -228,6 +232,6 @@ main {
   width: 100%;
 }
 
-.handsImage {
+.forkImage {
   border-radius: 50%;
 }
