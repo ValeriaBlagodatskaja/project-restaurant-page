@@ -10,11 +10,11 @@ function createHomePage() {
   const p = document.createElement("p");
   p.textContent = "Authentic Italian cuisine and cozy ambience";
 
-  const handsImage = document.createElement("img");
-  handsImage.classList.add("handsImage");
-  handsImage.src = "../images/hands.jpg";
-  handsImage.alt = "Hands image";
-  handsImage.height = 400;
+  const forkImage = document.createElement("img");
+  forkImage.classList.add("forkImage");
+  forkImage.src = "../images/fork.jpg";
+  forkImage.alt = "Fork image";
+  forkImage.height = 400;
 
   const visitUs = document.createElement("p");
   visitUs.textContent = "Order online or visit us!";
@@ -26,7 +26,7 @@ function createHomePage() {
 
   main.appendChild(h1);
   main.appendChild(p);
-  main.appendChild(handsImage);
+  main.appendChild(forkImage);
   main.appendChild(visitUs);
   pageContent.appendChild(main);
 
